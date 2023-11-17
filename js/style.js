@@ -1,7 +1,7 @@
 let boardGame = document.querySelector('.board-game');
 let scoreElement = document.querySelector('.all-scores .score span');
 let highScoreElement = document.querySelector('.all-scores .high-score span');
-let arrowControls = document.querySelectorAll('.controls .arrow');
+let arrowControls = document.querySelectorAll('.controls i');
 
 let highScore = localStorage.getItem('high-score') || 0;
 highScoreElement.innerHTML = highScore;
@@ -43,16 +43,12 @@ function changeFoodposition() {
 function snakDiraction(e) {
     if (e.key === 'ArrowUp' && dirY != 1) {
         dirX = 0, dirY = -1
-        lastPX.classList.add('up')
-    } else if (e.key === 'ArrowRight' && dirX != -1) {
-        dirX = 1, dirY = 0;
-        lastPX.classList.add('right')
-    } else if (e.key === 'ArrowDown' && dirY != -1) {
-        dirX = 0, dirY = 1;
-        lastPX.classList.add('down')
     } else if (e.key === 'ArrowLeft' && dirX != 1) {
         dirX = -1, dirY = 0;
-        lastPX.classList.add('left')
+    } else if (e.key === 'ArrowRight' && dirX != -1) {
+        dirX = 1, dirY = 0;
+    } else if (e.key === 'ArrowDown' && dirY != -1) {
+        dirX = 0, dirY = 1;
     }
     // initGame();
 }

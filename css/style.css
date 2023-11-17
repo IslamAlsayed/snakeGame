@@ -19,14 +19,14 @@
 
 @media (max-width: 600px) {
     :root {
-        --widthLarge: 400px;
+        --widthLarge: 420px;
         --HeightLarge: var(--widthLarge);
     }
 }
 
 @media (max-width: 425px) {
     :root {
-        --widthLarge: 300px;
+        --widthLarge: 350px;
         --HeightLarge: var(--widthLarge);
     }
 }
@@ -134,21 +134,48 @@ body * {
 .container .controls-arrows {
     display: none;
     margin-top: 20px;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .container .controls-arrows .controls {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    position: relative;
 }
 
-.container .controls-arrows .controls:last-child {
-    flex-direction: row;
+.container .controls-arrows .controls>i {
+    position: absolute;
 }
 
-.container .controls-arrows .controls .arrow {
+.container .controls-arrows .controls>i:first-of-type,
+.container .controls-arrows .controls>i:last-of-type {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container .controls-arrows .controls>i:nth-of-type(2),
+.container .controls-arrows .controls>i:nth-of-type(3) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .controls-arrows .controls>i:first-of-type {
+    top: 0;
+}
+
+.container .controls-arrows .controls>i:nth-of-type(2) {
+    left: 0;
+}
+
+.container .controls-arrows .controls>i:nth-of-type(3) {
+    right: 0;
+}
+
+.container .controls-arrows .controls>i:last-of-type {
+    bottom: 0;
+}
+
+.container .controls-arrows .controls i {
     width: 50px;
     height: 50px;
     display: grid;
@@ -165,9 +192,14 @@ body * {
 }
 
 @media (max-width: 425px) {
-    .container .controls-arrows .controls .arrow {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
+    .container .controls-arrows .controls {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container .controls-arrows .controls i {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 }
