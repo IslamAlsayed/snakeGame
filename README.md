@@ -1,2 +1,3 @@
-# snakeGame
-snake Game
+## Snake Game
+
+### https://islamalsayed.github.io/snakeGame/
