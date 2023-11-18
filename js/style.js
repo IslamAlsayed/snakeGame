@@ -42,12 +42,16 @@ function changeFoodposition() {
 // Chanhe diraction snake with press keys
 function snakDiraction(e) {
     if (e.key === 'ArrowUp' && dirY != 1) {
-        dirX = 0, dirY = -1
+        // if (dirX != 0 && dirY != -1) new Audio('./sounds/click1.mp3').play()
+        dirX = 0, dirY = -1;
     } else if (e.key === 'ArrowLeft' && dirX != 1) {
+        // if (dirX != -1 && dirY != 0) new Audio('./sounds/click1.mp3').play()
         dirX = -1, dirY = 0;
     } else if (e.key === 'ArrowRight' && dirX != -1) {
+        // if (dirX != 1 && dirY != 0) new Audio('./sounds/click1.mp3').play()
         dirX = 1, dirY = 0;
     } else if (e.key === 'ArrowDown' && dirY != -1) {
+        // if (dirX != 0 && dirY != 1) new Audio('./sounds/click1.mp3').play()
         dirX = 0, dirY = 1;
     }
     // initGame();

@@ -2,32 +2,14 @@
     --mainColor: #2196f3;
     --snakeColor: #fbff00;
     --foodColor: #ff0000;
-    --widthLarge: 900px;
-    --HeightLarge: calc(var(--widthLarge) / 2);
     --countPixelsX: 60;
-    --countPixelsY: 30;
+    --countPixelsY: 40;
 }
 
 @media (max-width: 992px) {
     :root {
-        --widthLarge: 600px;
-        --HeightLarge: var(--widthLarge);
         --countPixelsX: 30;
         --countPixelsY: 30;
-    }
-}
-
-@media (max-width: 600px) {
-    :root {
-        --widthLarge: 420px;
-        --HeightLarge: var(--widthLarge);
-    }
-}
-
-@media (max-width: 425px) {
-    :root {
-        --widthLarge: 350px;
-        --HeightLarge: var(--widthLarge);
     }
 }
 
@@ -47,13 +29,50 @@ body * {
 }
 
 .container {
-    width: var(--widthLarge);
+    width: 900px;
+    height: 600px;
     padding: 20px;
     margin: auto;
 }
 
 .btnClick:active {
     transform: scale(0.96);
+}
+
+@media (max-width: 992px) {
+    :root {
+        --countPixelsX: 42;
+        --countPixelsY: 30;
+    }
+
+    .container {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --countPixelsX: 30;
+        --countPixelsY: 30;
+    }
+
+    .container {
+        width: 470px;
+        height: 470px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --countPixelsX: 30;
+        --countPixelsY: 30;
+    }
+
+    .container {
+        width: 350px;
+        height: 350px;
+    }
 }
 
 .info-container {
@@ -94,7 +113,7 @@ body * {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .info-container {
         font-size: 12px;
     }
@@ -104,7 +123,8 @@ body * {
     }
 }
 
-@media (max-width: 424px) {
+/* @media (max-width: 424px) { */
+@media (max-width: 500px) {
     .info-container {
         font-size: 10px;
     }
@@ -115,8 +135,10 @@ body * {
 }
 
 .container .board-game {
-    width: calc(var(--widthLarge) - 40px);
-    height: calc(var(--HeightLarge) - 40px);
+    /* width: calc(var(--widthLarge) - 40px); */
+    width: 100%;
+    height: 100%;
+    /* height: calc(var(--HeightLarge) - 40px); */
     background: var(--mainColor);
     display: grid;
     grid-template: repeat(var(--countPixelsY), 1fr) / repeat(var(--countPixelsX), 1fr);
@@ -138,46 +160,22 @@ body * {
 }
 
 .container .controls-arrows .controls {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     position: relative;
 }
 
-.container .controls-arrows .controls>i {
+.container .controls-arrows .controls button {
+    border: none;
+    outline: none;
+    cursor: pointer;
     position: absolute;
+    background: transparent;
 }
 
-.container .controls-arrows .controls>i:first-of-type,
-.container .controls-arrows .controls>i:last-of-type {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.container .controls-arrows .controls>i:nth-of-type(2),
-.container .controls-arrows .controls>i:nth-of-type(3) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.container .controls-arrows .controls>i:first-of-type {
-    top: 0;
-}
-
-.container .controls-arrows .controls>i:nth-of-type(2) {
-    left: 0;
-}
-
-.container .controls-arrows .controls>i:nth-of-type(3) {
-    right: 0;
-}
-
-.container .controls-arrows .controls>i:last-of-type {
-    bottom: 0;
-}
-
-.container .controls-arrows .controls i {
-    width: 50px;
-    height: 50px;
+.container .controls-arrows .controls button i {
+    width: 60px;
+    height: 60px;
     display: grid;
     color: #fff;
     border-radius: 50%;
@@ -185,21 +183,58 @@ body * {
     background: var(--mainColor);
 }
 
-@media (max-width: 600px) {
+.container .controls-arrows .controls button:first-of-type,
+.container .controls-arrows .controls button:last-of-type {
+    left: 50px;
+}
+
+.container .controls-arrows .controls button:nth-of-type(2),
+.container .controls-arrows .controls button:nth-of-type(3) {
+    top: 50px;
+}
+
+.container .controls-arrows .controls button:first-of-type {
+    top: 0;
+}
+
+.container .controls-arrows .controls button:nth-of-type(2) {
+    left: 0;
+}
+
+.container .controls-arrows .controls button:nth-of-type(3) {
+    right: 0;
+}
+
+.container .controls-arrows .controls button:last-of-type {
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
     .container .controls-arrows {
         display: flex;
     }
 }
 
-@media (max-width: 425px) {
+/* @media (max-width: 425px) { */
+@media (max-width: 500px) {
     .container .controls-arrows .controls {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
     }
 
-    .container .controls-arrows .controls i {
-        width: 40px;
-        height: 40px;
+    .container .controls-arrows .controls button i {
+        width: 50px;
+        height: 50px;
         font-size: 14px;
+    }
+
+    .container .controls-arrows .controls button:first-of-type,
+    .container .controls-arrows .controls button:last-of-type {
+        left: 40px;
+    }
+
+    .container .controls-arrows .controls button:nth-of-type(2),
+    .container .controls-arrows .controls button:nth-of-type(3) {
+        top: 40px;
     }
 }
